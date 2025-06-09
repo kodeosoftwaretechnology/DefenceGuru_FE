@@ -100,7 +100,7 @@ function openEnquiryPage() {
             if (logo) {
                 logo.addEventListener("click", function () {
                     console.log(`${logoId} clicked! Redirecting...`);
-                    window.location.href = "home.html";
+                    window.location.href = "index.html";
                 });
             }
         }
