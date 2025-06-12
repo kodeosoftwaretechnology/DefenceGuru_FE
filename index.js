@@ -87,7 +87,7 @@ function openEnquiryPage() {
     //     if (logo) {
     //         logo.addEventListener("click", function () {
     //             console.log("Logo clicked! Redirecting...");
-    //             window.location.href = "home.html";
+    //             window.location.href = "index.html";
     //         });
     //     } else {
     //         console.log("Logo not found!");
@@ -282,3 +282,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
  
 
+
+
+
+// Function to show the popup when the page loads
+window.onload = function() {
+  document.getElementById('popup').style.display = 'flex'; // Show the popup
+  console.log(" Pop Up  Loaded  ");
+}
+
+// Function to close the popup
+function closePopup() {
+  document.getElementById('popup').style.display = 'none'; // Hide the popup
+}
