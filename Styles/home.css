@@ -424,9 +424,9 @@ body, html {
 /* Mobile Responsive सुधारणा */
 @media (max-width: 768px) {
     .content {
-        width: 95%;
+        width: 100%;
         padding: 10px;
-        margin-top:40px;
+        margin-top:20px;
     }
 
     /* Text size adjustments for mobile */
