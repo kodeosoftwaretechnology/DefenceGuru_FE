@@ -1,75 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
-    <link rel="stylesheet" href="../Styles/home.css" />
-    <link rel="stylesheet" href="./theme.html" />
-  </head>
-  <body>
-    <div id="header"></div>
 
-    <!-- First Page -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+
+  <link rel="stylesheet" href="./theme.html" />
+  <style>
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .popup-content.custom-popup {
+      background: #1a0d0d;
+      color: #fff;
+      border-radius: 12px;
+      padding: 0;
+      max-width: 95vw;
+      width: 400px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      position: relative;
+      text-align: center;
+    }
+
+    .popup-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px 12px 0 0;
+      display: block;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #fff;
+      z-index: 2;
+    }
+
+    @media (max-width: 500px) {
+      .popup-content.custom-popup {
+        width: 95vw;
+        padding: 0;
+      }
+
+      .popup-img {
+        border-radius: 8px 8px 0 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-section {
+        height: 60vh !important;
+        min-height: 320px;
+      }
+
+      .video-container {
+        height: 100% !important;
+        min-height: 320px;
+      }
+
+      #background-video {
+        height: 100% !important;
+        min-height: 320px;
+      }
+
+      .content h1 {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+        color: #ffd600 !important;
+      }
+
+      .content p,
+      .content .highlight {
+        display: inline;
+        font-size: 1rem;
+        margin: 0 2px;
+        white-space: normal;
+      }
+
+      .content {
+        max-width: 98vw;
+        padding: 5px;
+        top: 60%;
+      }
+    }
+
+    .content h1 {
+      color: #ffd600 !important;
+    }
+
+    .partners-logos {
+      display: flex;
+      gap: 30px;
+      animation: rotate 0s linear infinite;
+      justify-content: center;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <!-- First Page -->
+  <div class="hero-section">
+    <!-- Background Video (फक्त Hero Section मध्ये) -->
     <div class="hero-section">
-      <!-- Background Video (फक्त Hero Section मध्ये) -->
-      <div class="hero-section">
       <div class="video-container">
-  <video autoplay muted loop id="background-video">
-    <source src="https://res.cloudinary.com/dvq0oz6n6/video/upload/v1749646728/x7fvsy4xmmr7tacvfm8e.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-      </div>
-
-      <div class="content">
-        <h1>Take Your Career to the Next Level with Us</h1>
-        <p>Join Our Defence Guru Cyber Education Institute</p>
-        <span class="highlight">YOUR SECURITY ! OUR PASSION !</span>
-        <div id="enqirey">
-          <button class="cta-button" onclick="openEnquiryPage()">
-            Enquire Now
-          </button>
-        </div>
+        <video autoplay muted loop id="background-video">
+          <source src="https://res.cloudinary.com/dvq0oz6n6/video/upload/v1749646728/x7fvsy4xmmr7tacvfm8e.mp4"
+            type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
 
-    <div class="partners-section">
-      <br /><br />
-      <h2>
-        Benefit From A Global Network Of <br />
-        25+ Hiring Partners
-      </h2>
-      <br />
-      <!-- First Row of Logos -->
-      <div class="partners-slider">
-        <div class="partners-logos">
-          <img src="../Assests/campany/synechron.png" alt="Synocrone" />
-          <img src="../Assests/campany/Deloitte.png" alt="Deloitte" />
-          <img src="../Assests/campany/CYBERSCRIPT.png" alt="CYBERSCRIPT" />
-          <img src="../Assests/campany/Eclerx.png" alt="Eclerx" />
-          <img src="../Assests/campany/Gemini-oil.png" alt="Gemini-oil" />
-          <img src="../Assests/campany/HONCHOMINDS.png" alt="HONCHOMINDS" />
-          <img src="../Assests/campany/JUSPAY.jpeg" alt="Juspay" />
-          <img src="../Assests/campany/K7TECHNOLOGY.png" alt="K7TECHNOLOGY" />
-          <img src="../Assests/campany/KM.png" alt="KM" />
-          <img src="../Assests/campany/KODEO.png" alt="KODEO" />
-          <img src="../Assests/campany/KPIT.jpeg" alt="KPIT" />
-          <img src="../Assests/campany/KPMG.png" alt="KPMG" />
-          <img src="../Assests/campany/pAYPLEX.png" alt="PAYPLEX" />
-          <img src="../Assests/campany/Progtech.png" alt="Progtktech" />
-          <img src="../Assests/campany/TECHWALNUT.png" alt="TECHWALNUT" />
-          <img src="../Assests/campany/Turiance.png" alt="Turiance" />
-          <img src="../Assests/campany/WAVERECO.png" alt="WAVERECO" />
-          <img
-            src="../Assests/campany/YASHTECHNOLOGY.png"
-            alt="YASHTECHNOLOGY"
-          />
-          <img src="../Assests/campany/zplus.jpg" alt="zplus" />
-        </div>
+    <div class="content">
+      <h1>Take Your Career to the Next<br />Level with Us</h1>
+      <p>Join Our Defence Guru Cyber Education Institute</p>
+      <span class="highlight">YOUR SECURITY ! OUR PASSION !</span>
+      <div id="enqirey">
+        <button class="cta-button" onclick="openEnquiryPage()">
+          Enquire Now
+        </button>
       </div>
+    </div>
+  </div>
 
-      <!-- Second Row of Logos
+  <div class="partners-section">
+    <br /><br />
+    <h2>
+      Benefit From A Global Network Of <br />
+      25+ Hiring Partners
+    </h2>
+    <br />
+    <!-- First Row of Logos -->
+    <div class="partners-slider">
+      <div class="partners-logos">
+        <img src="../Assests/campany/1.jpg" alt="JUSPAY (21 LPA)" />
+        <img src="../Assests/campany/2.jpg" alt="47 BILLION INFORMATION TECHNOLOGIES LTD (9.2 LPA)" />
+        <img src="../Assests/campany/3.jpg" alt="Deloitte (7.5 LPA)" />
+        <img src="../Assests/campany/4.jpg" alt="SHOPPERS STOP PVT.LTD (5 LPA)" />
+        <img src="../Assests/campany/5.jpg" alt="Synechron (4.5 LPA)" />
+        <img src="../Assests/campany/6.jpg" alt="Honchominds (4.5 LPA)" />
+        <img src="../Assests/campany/7.jpg" alt="LG Electronics (4 LPA)" />
+        <img src="../Assests/campany/8.jpg" alt="bitwise" />
+        <img src="../Assests/campany/9.jpg" alt="checkmarx" />
+
+        <img src="../Assests/campany/cannon.jpg" alt="cannon" />
+        <img src="../Assests/campany/bpointer-logo.png.webp" alt="bpointer" />
+        <img src="../Assests/campany/fujitsu.png" alt="fujitsu" />
+        <img src="../Assests/campany/aiunika-logo.webp" alt="aiunika" />
+        <img src="../Assests/campany/genpact.jpg" alt="genpact" />
+        <img src="../Assests/campany/wipro_new_logo.svg" alt="wipro" />
+        <img src="../Assests/campany/kisankonnect_logo.svg" alt="kisankonnect" />
+        <img src="../Assests/campany/LG-Logo-PNG1.png" alt="LG" />
+        <img src="../Assests/campany/IBM.jpg" alt="IBM" />
+        <img src="../Assests/campany/Bosch-Logo-700x394.png" alt="Bosch" />
+        <img src="../Assests/campany/ciphernine.png" alt="ciphernine" />
+        <img src="../Assests/campany/Haier_logo_PNG (4).png" alt="Haier" />
+        <img src="../Assests/campany/zplus.jpg" alt="Z+ Cyber secure pvt" />
+        <img src="../Assests/campany/airtel-logo-red-text-horizontal.jpg" alt="airtel" />
+        <img src="../Assests/campany/ksb-logo-data.svg" alt="KSB" />
+        <!-- <img src="../Assests/campany/TTEC-Website-Hero.webp" alt="TTEC" /> -->
+      </div>
+    </div>
+
+    <!-- Second Row of Logos
       <div class="partners-slider">
         <div class="partners-logos reverse">
           <img src="../Assests/accenture copy.png" alt="Oracle" />
@@ -87,347 +207,356 @@
         </div>
       </div> -->
 
-      <!-- Info Box -->
-      <div class="info-box">
-        <div class="info-text">
-          More than <span class="highlight">72%</span> of Defence Guru alumni
-          <br />
-          work at <span class="bold">Fortune 50</span> companies
-        </div>
-        <div class="fortune-box">
-          <div class="fortune-title">FORTUNE</div>
-          <div class="fortune-number">200+</div>
-          <div class="fortune-year">2024</div>
-        </div>
+    <!-- Info Box -->
+    <div class="info-box">
+      <div class="info-text">
+        More than <span class="highlight">72%</span> of Defence Guru alumni
+        <br />
+        work at <span class="bold">Fortune 50</span> companies
       </div>
-      <br />
+      <div class="fortune-box">
+        <div class="fortune-title">FORTUNE</div>
+        <div class="fortune-number">200+</div>
+        <div class="fortune-year">2024 - 25</div>
+      </div>
     </div>
+    <br />
+  </div>
 
-    <div class="placement-section">
-      <div class="placement-content">
-        <div class="placement-info">
-          <h2>Placement Highlights 2024</h2>
-          <div class="stats">
-            <div class="stat-item">
-              <h3>250+</h3>
-              <p>Placements</p>
-            </div>
-            <div class="stat-item">
-              <h3>150+</h3>
-              <p>Career Transitions</p>
-            </div>
-            <div class="stat-item">
-              <h3>21 LPA</h3>
-              <p>Highest Salary</p>
-            </div>
+  <div class="placement-section">
+    <div class="placement-content">
+      <div class="placement-info">
+        <h2>Placement Highlights 2024</h2>
+        <div class="stats">
+          <div class="stat-item">
+            <h3>250+</h3>
+            <p>Placements</p>
           </div>
-          <!-- <button class="download-btn">
+          <div class="stat-item">
+            <h3>150+</h3>
+            <p>Career Transitions</p>
+          </div>
+          <div class="stat-item">
+            <h3>21 LPA</h3>
+            <p>Highest Salary</p>
+          </div>
+        </div>
+        <!-- <button class="download-btn">
                     Download Placement Report 
                     <span>⬇️</span>
                 </button> -->
-        </div>
-        <div class="placement-image">
-          <img src="../Assests/21lakh.jpeg" alt="Placement Highlights" />
-        </div>
+      </div>
+      <div class="placement-image">
+        <img src="../Assests/21lakh.jpeg" alt="Placement Highlights" />
       </div>
     </div>
+  </div>
 
-    <!-- Stats Section -->
-    <section class="stats-container">
-      <br />
-      <br />
-      <h2 class="stats-heading">Behind Every Successful Career</h2>
-      <p class="stats-description">
-        Defence Guru Cyber Education Institute – A Renowned Brand For Quality Education And In-House Job
-        Placement Services Since, Past Decades.
-      </p>
+  <!-- Stats Section -->
+  <section class="stats-container">
+    <br />
+    <br />
+    <h2 class="stats-heading">Behind Every Successful Career</h2>
+    <p class="stats-description">
+      Defence Guru Cyber Education Institute – A Renowned Brand For Quality
+      Education And In-House Job Placement Services Since, Past Decades.
+    </p>
 
-      <div class="stats-grid">
-        <div class="stat-card">
-          <h2>98%</h2>
-          <p>Success Rate</p>
-        </div>
-        <div class="stat-card">
-          <h2>1k+</h2>
-          <p>Active Students</p>
-        </div>
-        <div class="stat-card">
-          <h2>25+</h2>
-          <p>Hiring Partners</p>
-        </div>
-        <div class="stat-card">
-          <h2>364+</h2>
-          <p>Successful Careers Made</p>
-        </div>
-        <div class="stat-card">
-          <h2>15+</h2>
-          <p>Total Mentors</p>
-        </div>
-        <div class="stat-card">
-          <h2>30+</h2>
-          <p>Online/Offline Courses</p>
-        </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h2>98%</h2>
+        <p>Success Rate</p>
       </div>
-    </section>
-    <br />
-    <br />
+      <div class="stat-card">
+        <h2>1k+</h2>
+        <p>Active Students</p>
+      </div>
+      <div class="stat-card">
+        <h2>25+</h2>
+        <p>Hiring Partners</p>
+      </div>
+      <div class="stat-card">
+        <h2>364+</h2>
+        <p>Successful Careers Made</p>
+      </div>
+      <div class="stat-card">
+        <h2>15+</h2>
+        <p>Total Mentors</p>
+      </div>
+      <div class="stat-card">
+        <h2>30+</h2>
+        <p>Online/Offline Courses</p>
+      </div>
+    </div>
+  </section>
+  <br />
+  <br />
 
-    <!-- Placement Page -->
-
-    <div class="career-slider">
-      <div class="slider-row">
-        <div class="slide">
-          <img src="../PlaceStudent/1.png" alt="Person 1" />
-          <!-- <h3>Parvesh Wasuja</h3>
+  <!-- Placement Page -->
+  <div class="career-slider">
+    <div class="slider-row">
+      <div class="slide">
+        <img src="../PlaceStudent/1.jpg" alt="Person 1" />
+        <!-- <h3>Parvesh Wasuja</h3>
             <p>Fresher</p> -->
-          <!-- <p class="company">Samsung</p> -->
-          <!-- <p class="position">Software Engineer</p> -->
-          <!-- <p class="package">Package: <span>4.5 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/2.png" alt="Person 2" />
-          <!-- <h3>Gaurav Deshmukh</h3>
+        <!-- <p class="company">Samsung</p> -->
+        <!-- <p class="position">Software Engineer</p> -->
+        <!-- <p class="package">Package: <span>4.5 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/1.jpg" alt="Person 2" />
+        <!-- <h3>Gaurav Deshmukh</h3>
             <p>Fresher</p> -->
-          <!-- <p class="company">Github</p>
+        <!-- <p class="company">Github</p>
             <p class="position">Data Scientist</p> -->
-          <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/3.jpg" alt="Person 2" />
-          <!-- <h3>Gaurav Deshmukh</h3>
+        <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/10.jpg" alt="Person 3" />
+        <!-- <h3>Gaurav Deshmukh</h3>
             <p>Fresher</p>
             <p class="company">Github</p>
             <p class="position">Data Scientist</p> -->
-          <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/4.png" alt="Person 2" />
-          <!-- <h3>Gaurav Deshmukh</h3> -->
-          <!-- <p>Fresher</p> -->
-          <!-- <p class="company">Github</p>
-            <p class="position">Data Scientist</p> -->
-          <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/5.png" alt="Person 2" />
-          <!-- <h3>Gaurav Deshmukh</h3> -->
-          <!-- <p>Fresher</p> -->
-          <!-- <p class="company">Github</p>
-            <p class="position">Data Scientist</p> -->
-          <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/6.jpg" alt="Person 2" />
-          <!-- <h3>Gaurav Deshmukh</h3> -->
-          <!-- <p>Fresher</p> -->
-          <!-- <p class="company">Github</p>
-            <p class="position">Data Scientist</p> -->
-          <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/7.jpg" alt="Person 2" />
-          <!-- <h3>Gaurav Deshmukh</h3> -->
-          <!-- <p>Fresher</p> -->
-          <!-- <p class="company">Github</p>
-            <p class="position">Data Scientist</p> -->
-          <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/8.jpg" alt="Person 2" />
-          <!-- <h3>Gaurav Deshmukh</h3> -->
-          <!-- <p>Fresher</p>
-            <p class="company">Github</p>
-            <p class="position">Data Scientist</p> -->
-          <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/9.jpg" alt="Person 2" />
-          <!-- <h3>Gaurav Deshmukh</h3> -->
-          <!-- <p>Fresher</p>
-            <p class="company">Github</p>
-            <p class="position">Data Scientist</p> -->
-          <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/10.jpg" alt="Person 2" />
-          <!-- <h3>Gaurav Deshmukh</h3> -->
-          <!-- <p>Fresher</p>
-            <p class="company">Github</p>
-            <p class="position">Data Scientist</p> -->
-          <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/11.jpg" alt="Person 2" />
-          <!-- <h3>Gaurav Deshmukh</h3> -->
-          <!-- <p>Fresher</p>
-            <p class="company">Github</p>
-            <p class="position">Data Scientist</p> -->
-          <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/12.jpg" alt="Person 2" />
-          <!-- <h3>Gaurav Deshmukh</h3> -->
-          <!-- <p>Fresher</p>
-            <p class="company">Github</p>
-            <p class="position">Data Scientist</p> -->
-          <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
-        </div>
-
-        <!-- Add more slides as needed -->
+        <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
       </div>
-      <div class="slider-row">
-        <div class="slide">
-          <img src="../PlaceStudent/13.jpg" alt="Person 3" />
-          <!-- <h3>Neelesh Dwivedi</h3> -->
-          <!-- <p>Engineer</p>
+      <div class="slide">
+        <img src="./place/2.jpg" alt="Person 3" />
+        <!-- <h3>Gaurav Deshmukh</h3> -->
+        <!-- <p>Fresher</p> -->
+        <!-- <p class="company">Github</p>
+            <p class="position">Data Scientist</p> -->
+        <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/3.jpg" alt="Person 3" />
+        <!-- <h3>Gaurav Deshmukh</h3> -->
+        <!-- <p>Fresher</p> -->
+        <!-- <p class="company">Github</p>
+            <p class="position">Data Scientist</p> -->
+        <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/4.jpg" alt="Person 3" />
+        <!-- <h3>Gaurav Deshmukh</h3> -->
+        <!-- <p>Fresher</p> -->
+        <!-- <p class="company">Github</p>
+            <p class="position">Data Scientist</p> -->
+        <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/5.jpg" alt="Person 3" />
+        <!-- <h3>Gaurav Deshmukh</h3> -->
+        <!-- <p>Fresher</p> -->
+        <!-- <p class="company">Github</p>
+            <p class="position">Data Scientist</p> -->
+        <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/6.jpg" alt="Person 3" />
+        <!-- <h3>Gaurav Deshmukh</h3> -->
+        <!-- <p>Fresher</p>
+            <p class="company">Github</p>
+            <p class="position">Data Scientist</p> -->
+        <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/7.jpg" alt="Person 3" />
+        <!-- <h3>Gaurav Deshmukh</h3> -->
+        <!-- <p>Fresher</p>
+            <p class="company">Github</p>
+            <p class="position">Data Scientist</p> -->
+        <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/8.jpg" alt="Person 3" />
+        <!-- <h3>Gaurav Deshmukh</h3> -->
+        <!-- <p>Fresher</p>
+            <p class="company">Github</p>
+            <p class="position">Data Scientist</p> -->
+        <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/9.jpg" alt="Person 3" />
+        <!-- <h3>Gaurav Deshmukh</h3> -->
+        <!-- <p>Fresher</p>
+            <p class="company">Github</p>
+            <p class="position">Data Scientist</p> -->
+        <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/11.jpg" alt="Person 3" />
+        <!-- <h3>Gaurav Deshmukh</h3> -->
+        <!-- <p>Fresher</p>
+            <p class="company">Github</p>
+            <p class="position">Data Scientist</p> -->
+        <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
+      </div>
+
+      <!-- Add more slides as needed -->
+    </div>
+    <div class="slider-row">
+      <div class="slide">
+        <img src="../PlaceStudent/13.jpg" alt="Person 13" />
+        <!-- <h3>Neelesh Dwivedi</h3> -->
+        <!-- <p>Engineer</p>
             <p class="company">Samsung</p>
             <p class="position">Software Engineer</p> -->
-          <!-- <p class="package">Package: <span>5.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/14.jpg" alt="Person 4" />
-          <!-- <h3>Abhimanyu Kaushik</h3> -->
-          <!-- <p>Fresher</p>
-            <p class="company">ANZ Plus</p>
-            <p class="position">RAN Engineer</p> -->
-          <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/15.jpg" alt="Person 4" />
-          <!-- <h3>Abhimanyu Kaushik</h3> -->
-          <!-- <p>Fresher</p>
-            <p class="company">ANZ Plus</p>
-            <p class="position">RAN Engineer</p> -->
-          <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/16.jpg" alt="Person 4" />
-          <!-- <h3>Abhimanyu Kaushik</h3> -->
-          <!-- <p>Fresher</p>
-            <p class="company">ANZ Plus</p>
-            <p class="position">RAN Engineer</p> -->
-          <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/17.jpg" alt="Person 4" />
-          <!-- <h3>Abhimanyu Kaushik</h3> -->
-          <!-- <p>Fresher</p>
-            <p class="company">ANZ Plus</p>
-            <p class="position">RAN Engineer</p> -->
-          <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/18.jpg" alt="Person 4" />
-          <!-- <h3>Abhimanyu Kaushik</h3> -->
-          <!-- <p>Fresher</p>
-            <p class="company">ANZ Plus</p>
-            <p class="position">RAN Engineer</p> -->
-          <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/19.jpg" alt="Person 4" />
-          <!-- <h3>Abhimanyu Kaushik</h3> -->
-          <!-- <p>Fresher</p>
-            <p class="company">ANZ Plus</p>
-            <p class="position">RAN Engineer</p> -->
-          <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/20.jpg" alt="Person 4" />
-          <!-- <h3>Abhimanyu Kaushik</h3> -->
-          <!-- <p>Fresher</p>
-            <p class="company">ANZ Plus</p>
-            <p class="position">RAN Engineer</p> -->
-          <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/21.jpg" alt="Person 4" />
-          <!-- <h3>Abhimanyu Kaushik</h3> -->
-          <!-- <p>Fresher</p>
-            <p class="company">ANZ Plus</p>
-            <p class="position">RAN Engineer</p> -->
-          <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/22.jpg" alt="Person 4" />
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/23.jpg" alt="Person 4" />
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/24.jpg" alt="Person 4" />
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/25.jpg" alt="Person 4" />
-        </div>
-        <div class="slide">
-          <img src="../PlaceStudent/26.jpg" alt="Person 4" />
-        </div>
-        <!-- Add more slides as needed -->
+        <!-- <p class="package">Package: <span>5.0 LPA</span></p> -->
       </div>
+      <div class="slide">
+        <img src="./place/12.jpg" alt="Person 3" />
+        <!-- <h3>Abhimanyu Kaushik</h3> -->
+        <!-- <p>Fresher</p>
+            <p class="company">ANZ Plus</p>
+            <p class="position">RAN Engineer</p> -->
+        <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/13.jpg" alt="Person 3" />
+        <!-- <h3>Abhimanyu Kaushik</h3> -->
+        <!-- <p>Fresher</p>
+            <p class="company">ANZ Plus</p>
+            <p class="position">RAN Engineer</p> -->
+        <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/14.jpg" alt="Person 3" />
+        <!-- <h3>Abhimanyu Kaushik</h3> -->
+        <!-- <p>Fresher</p>
+            <p class="company">ANZ Plus</p>
+            <p class="position">RAN Engineer</p> -->
+        <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/15.jpg" alt="Person 3" />
+        <!-- <h3>Abhimanyu Kaushik</h3> -->
+        <!-- <p>Fresher</p>
+            <p class="company">ANZ Plus</p>
+            <p class="position">RAN Engineer</p> -->
+        <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/16.jpg" alt="Person 3" />
+        <!-- <h3>Abhimanyu Kaushik</h3> -->
+        <!-- <p>Fresher</p>
+            <p class="company">ANZ Plus</p>
+            <p class="position">RAN Engineer</p> -->
+        <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/17.jpg" alt="Person 3" />
+        <!-- <h3>Abhimanyu Kaushik</h3> -->
+        <!-- <p>Fresher</p>
+            <p class="company">ANZ Plus</p>
+            <p class="position">RAN Engineer</p> -->
+        <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/18.jpg" alt="Person 3" />
+        <!-- <h3>Abhimanyu Kaushik</h3> -->
+        <!-- <p>Fresher</p>
+            <p class="company">ANZ Plus</p>
+            <p class="position">RAN Engineer</p> -->
+        <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/19.jpg" alt="Person 3" />
+        <!-- <h3>Abhimanyu Kaushik</h3> -->
+        <!-- <p>Fresher</p>
+            <p class="company">ANZ Plus</p>
+            <p class="position">RAN Engineer</p> -->
+        <!-- <p class="package">Package: <span>7.0 LPA</span></p> -->
+      </div>
+      <div class="slide">
+        <img src="./place/20.jpg" alt="Person 3" />
+      </div>
+      <div class="slide">
+        <img src="./place/21.jpg" alt="Person 3" />
+      </div>
+      <div class="slide">
+        <img src="./place/22.jpg" alt="Person 3" />
+      </div>
+      <div class="slide">
+        <img src="./place/23.jpg" alt="Person 3" />
+      </div>
+      <div class="slide">
+        <img src="./place/24.jpg" alt="Person 3" />
+      </div>
+      <!-- Add more slides as needed -->
     </div>
+  </div>
 
-    <div class="button-container">
-      <button onclick="window.location.href='placedstudentss.html'">
-        Our Placed Students
-      </button>
-    </div>
-
-    <!-- Your Career Deserves The Best -->
-    <div class="career-section">
-      <h2>Your Career Deserves The Best</h2>
-      <div class="career-content">
-        <!-- Left Side - Career List -->
-        <div class="career-card">
-          <div class="career-card-item active">
-            <span class="icon">💼</span>
-            Industry-specific Skill Training
-          </div>
-          <div class="career-card-item">
-            <span class="icon">🤝</span>
-            Mentorship
-          </div>
-          <div class="career-card-item">
-            <span class="icon">🎯</span>
-            Assured Interviews
-          </div>
-          <div class="career-card-item">
-            <span class="icon">🌐</span>
-            Global Networking
-          </div>
-          <div class="career-card-item">
-            <span class="icon">🎮</span>
-            Hackathons & Gamification
-          </div>
+  <!-- Your Career Deserves The Best -->
+  <div class="career-section">
+    <h2>Your Career Deserves The Best</h2>
+    <div class="career-content">
+      <!-- Left Side - Career List -->
+      <div class="career-card">
+        <div class="career-card-item active">
+          <span class="icon">💼</span>
+          Industry-specific Skill Training
         </div>
+        <div class="career-card-item">
+          <span class="icon">🤝</span>
+          Mentorship
+        </div>
+        <div class="career-card-item">
+          <span class="icon">🎯</span>
+          Assured Interviews
+        </div>
+        <div class="career-card-item">
+          <span class="icon">🌐</span>
+          Global Networking
+        </div>
+        <div class="career-card-item">
+          <span class="icon">🎮</span>
+          Hackathons & Gamification
+        </div>
+      </div>
 
-        <!-- Right Side - Career Details -->
-        <div class="career-details">
-          <div class="career-image">
-            <img
-              src="../Assests/YourCarreDesrvebest.webp"
-              alt="Career Training"
-            />
-          </div>
-          <div class="career-info active">
-            <h3>Industry-specific Skill Training</h3>
-            <p>
-              The demands of industries and jobs are changing rapidly. Keeping
-              that in mind, we've built industry-specific training programs that
-              can grow and evolve with the future and set you apart from your
-              competition.
-            </p>
-            <div class="career-stats">
-              <button>Niche skills accounted for 40% of employment</button>
-              <button>50% of employees need immediate upskilling</button>
-            </div>
+      <!-- Right Side - Career Details -->
+      <div class="career-details">
+        <div class="career-image">
+          <img src="../Assests/YourCarreDesrvebest.webp" alt="Career Training" />
+        </div>
+        <div class="career-info active">
+          <h3>Industry-specific Skill Training</h3>
+          <p>
+            The demands of industries and jobs are changing rapidly. Keeping
+            that in mind, we've built industry-specific training programs that
+            can grow and evolve with the future and set you apart from your
+            competition.
+          </p>
+          <div class="career-stats">
+            <button>Niche skills accounted for 40% of employment</button>
+            <button>50% of employees need immediate upskilling</button>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div id="footer"></div>
+  <div id="footer"></div>
 
-    <script src="../index.js" defer></script>
-  </body>
+  <!-- Popup Modal -->
+  <div id="myPopup" class="popup-overlay" style="display: none">
+    <div class="popup-content custom-popup">
+      <span id="closePopup" class="close-btn">&times;</span>
+      <img src="./Assests/popimg.jpeg" alt="Workshop Popup" class="popup-img" />
+    </div>
+  </div>
+
+  <script src="../index.js" defer></script>
+  <script>
+    window.onload = function () {
+      document.getElementById("myPopup").style.display = "flex";
+      document.getElementById("closePopup").onclick = function () {
+        document.getElementById("myPopup").style.display = "none";
+      };
+    };
+  </script>
+
+  <link rel="stylesheet" href="../Styles/home.css" />
+</body>
+
 </html>
