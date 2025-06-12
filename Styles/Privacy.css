@@ -7,6 +7,27 @@ body {
     color: #333;
 }
 
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #537280, #355560, #5c7bc5);
+    padding: 15px 5%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    height: 75px;
+    width: 100%;
+    margin-right: 30px;
+    margin-left: -50px;
+}
+
+.navbar .logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
 /* Privacy policy main container */
 .privacy-policy, .container {
     max-width: 100%;
