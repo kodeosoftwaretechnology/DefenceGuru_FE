@@ -426,6 +426,7 @@ body, html {
     .content {
         width: 95%;
         padding: 15px;
+        margin-top:20px;
     }
 
     /* Text size adjustments for mobile */
