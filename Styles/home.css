@@ -425,8 +425,8 @@ body, html {
 @media (max-width: 768px) {
     .content {
         width: 95%;
-        padding: 15px;
-        margin-top:20px;
+        padding: 10px;
+        margin-top:40px;
     }
 
     /* Text size adjustments for mobile */
