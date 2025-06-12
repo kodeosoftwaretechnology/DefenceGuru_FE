@@ -181,7 +181,7 @@ footer {
     font-family:'Times New Roman', Times, serif;/* ✅ Lato font lavla */
     /* font-size: 18px; */
     /* margin-bottom: 15px; */
-    color: #f8f8f8;
+    color: #ffffff;
     border-bottom: 2px solid #f39c12;
     padding-bottom: 30px;
 
@@ -264,6 +264,27 @@ footer {
         font-family:'Times New Roman', Times, serif /* ✅ Lato font lavla */
     
 }
+
+@media (max-width: 768px) {
+    .common-contact {
+        padding: 15px;
+        margin: 10px;
+        max-width: 100%;
+    }
+
+    .common-contact h3 {
+        font-size: 1.5em;
+    }
+
+    .common-contact p {
+        font-size: 1em; /* Adjust paragraph font size for smaller screens */
+    }
+
+    .common-contact p strong {
+        font-size: 1.1em; /* Increase the font size for 'strong' text */
+    }
+}
+
 
 
 /* Footer Links */
