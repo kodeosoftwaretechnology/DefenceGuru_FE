@@ -36,7 +36,7 @@
 
 /* Fix for missing logo issue */
 .logo {
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 /* Navigation Links */
@@ -226,12 +226,13 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     /* min-height: 100vh; */
     background-color: #ffffff;
     width: 100%; /* Full width */
     padding-top: 60px; /* To give space for fixed header */
+    justify-items: center;
 }
 
 /* Header & Footer */
@@ -243,7 +244,7 @@ body {
     background: #222;
     color: white;
     text-align: center;
-    padding: 20px 0;  /* Increased padding for better visibility */
+
     font-size: 1.2rem;
     z-index: 1000; /* Make sure the header stays above other content */
 }
@@ -316,7 +317,7 @@ section {
     justify-content: center;
     max-width: 1200px;
     margin: 110px auto;
-    margin-left: 30px;
+    
 }
 
 /* Testimonial Card */
