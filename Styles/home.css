@@ -348,9 +348,9 @@ body, html {
   margin-right: 10px;
 }
 
-.career-details {
+/* .career-details {
   margin-left: 30px;
-}
+} */
 
 .career-info {
   background-color: #fff;
@@ -1303,6 +1303,7 @@ h2 {
 
 .career-info h3 {
     font-size: 22px;
+    margin-top: 10px;
     margin-bottom: 10px;
     font-weight: bold;
     color: #004085;
