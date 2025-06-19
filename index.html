@@ -7,120 +7,198 @@
   <title>Home Page</title>
 
   <link rel="stylesheet" href="./theme.html" />
-  <style>
-    .popup-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
+
+<style>
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .popup-content.custom-popup {
+    background: #1a0d0d;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0;
+    max-width: 95vw;
+    width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    position: relative;
+    text-align: center;
+  }
+
+  .popup-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px 12px 0 0;
+    display: block;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    z-index: 2;
+  }
+
+ @media(min-width:   980px){
+      .popup-content.custom-popup {
+      width: 85vw;
+      padding: 0;
+      height:fit-content;
     }
 
+     .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* left: 0; */  
+    cursor: pointer;
+    color: #fff;  
+  
+    
+  }
+    
+    
+
+  }
+
+  @media (max-width: 500px) {
     .popup-content.custom-popup {
-      background: #1a0d0d;
-      color: #fff;
-      border-radius: 12px;
+      width: 85vw;
       padding: 0;
-      max-width: 95vw;
-      width: 400px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      position: relative;
-      text-align: center;
+      height: fit-content;
     }
 
     .popup-img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px 12px 0 0;
-      display: block;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-section {
+      min-height:100px;
     }
 
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 24px;
-      cursor: pointer;
-      color: #fff;
-      z-index: 2;
+    .video-container {
+      height: 100% !important;
+      min-height: 200px;
     }
 
-    @media (max-width: 500px) {
-      .popup-content.custom-popup {
-        width: 85vw;
-        padding: 0;
-        height: fit-content;
-      }
-
-      .popup-img {
-        border-radius: 8px 8px 0 0;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero-section {
-       
-        min-height: 300px;
-      }
-
-      .video-container {
-        height: 100% !important;
-        min-height: 400px;
-      }
-
-      #background-video {
-        height: 100% !important;
-        min-height: 400px;
-      }
-
-      .content h1 {
-        display: block;
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-        color: #ffd600 !important;
-      }
-
-      .content p,
-      .content .highlight {
-        display: inline;
-        font-size: 1rem;
-        margin: 0 2px;
-        white-space: normal;
-      }
-
-      .content {
-        max-width: 98vw;
-        padding: 5px;
-        top: 60%;
-      }
+    #background-video {
+      height: 100% !important;
+      min-height: 400px;
     }
 
     .content h1 {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
       color: #ffd600 !important;
     }
 
-    .partners-logos {
-      display: flex;
-      gap: 30px;
-      animation: rotate 100s linear infinite;
-      justify-content: center;
+    .content p,
+    .content .highlight {
+      display: inline;
+      font-size: 1rem;
+      margin: 0 2px;
+      white-space: normal;
     }
 
-    @keyframes rotate {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-100%);
-      }
+    .content {
+      max-width: 98vw;
+      padding: 5px;
+      top: 60%;
     }
-  </style>
+  }
+
+   @media(min-width:   980px)
+   { 
+      .hero-section {
+      min-height:10px;
+    }
+   }
+
+  .content h1 {
+    color: #ffd600 !important;
+  }
+
+  .partners-logos {
+    display: flex;
+    gap: 30px;
+    animation: rotate 100s linear infinite;
+    justify-content: center;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  
+
+  /* ✅ Additional query for high-resolution desktop-in-mobile view */
+  @media (max-width: 500px) and (pointer: fine) {
+    .popup-content.custom-popup {
+      width: 85vw;
+      padding: 0;
+      height: fit-content;
+    }
+
+    .popup-img {
+      border-radius: 8px 8px 0 0;
+      /* height: 80px; */ 
+    }
+
+    .content {
+      top: 10%;
+      padding: 5px;
+    }
+
+    .content h1 {
+      font-size: 1.2rem;
+    }
+
+      .popup-overlay {
+              /* width: 85vw; */
+
+  
+  }
+  }
+
+  @media (min-width: 1200px) {
+  .popup-content.custom-popup {
+    width: 400px;
+    max-width: 50vw;
+    height: auto;
+  }
+
+  .popup-img {
+    max-height: 300px;
+    object-fit: cover;
+  }
+}
+
+
+ 
+</style>
+
+
 </head>
 
 <body>
@@ -154,7 +232,7 @@
   <div class="partners-section">
     <br /><br />
     <h2>
-      Benefit From A Global Network Of <br />
+      Benefit From A Global Network Of <br /> 
       25+ Hiring Partners
     </h2>
     <br />
@@ -346,20 +424,10 @@
       </div>
       <div class="slide">
         <img src="./place/5.jpg" alt="Person 3" />
-        <!-- <h3>Gaurav Deshmukh</h3> -->
-        <!-- <p>Fresher</p> -->
-        <!-- <p class="company">Github</p>
-            <p class="position">Data Scientist</p> -->
-        <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
-      </div>
+            </div>
       <div class="slide">
         <img src="./place/6.jpg" alt="Person 3" />
-        <!-- <h3>Gaurav Deshmukh</h3> -->
-        <!-- <p>Fresher</p>
-            <p class="company">Github</p>
-            <p class="position">Data Scientist</p> -->
-        <!-- <p class="package">Package: <span>6.0 LPA</span></p> -->
-      </div>
+  </div>
       <div class="slide">
         <img src="./place/7.jpg" alt="Person 3" />
         <!-- <h3>Gaurav Deshmukh</h3> -->

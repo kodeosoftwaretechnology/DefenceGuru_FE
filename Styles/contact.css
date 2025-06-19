@@ -18,6 +18,7 @@
   left: 0px;
   z-index: 1000;
   height: 75px; /* Navbar ची exact height */
+  margin-right: 40px;
 }
 
 .hero-section {
@@ -191,6 +192,7 @@
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
       text-align: center;
       padding: 10px 0;
+      
   }
 
   .nav-links.active {
