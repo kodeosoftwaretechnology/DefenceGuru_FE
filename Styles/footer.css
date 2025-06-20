@@ -39,24 +39,6 @@ footer {
     text-align: left; /* Ensures text aligns left */
 }
 
-/* Footer Logo */
-/* .footer-logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    text-align: left;
-} */
-
-/* .footer-logo img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; 
-    object-fit: cover; 
-    display: block;
-    overflow: hidden; 
-    filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 0.2));
-} */
 
 .footer-logo {
     display: flex;
@@ -177,13 +159,10 @@ footer {
 .footer-section h2 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #fafaf9;
-    font-family:'Times New Roman', Times, serif;/* ✅ Lato font lavla */
-    /* font-size: 18px; */
-    /* margin-bottom: 15px; */
     color: #ffffff;
-    border-bottom: 2px solid #f39c12;
-    padding-bottom: 30px;
+    font-family:'Times New Roman', Times, serif;
+    border-bottom: 3px solid #f39c12;
+    padding-bottom: 10px;
 
 }
 
@@ -198,18 +177,19 @@ footer {
 /* Centered Columns */
 .center-columns {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
     gap: 40px;
-    margin-bottom: 30px;
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
 /* Individual Center Block */
 .center-column {
     flex: 1;
-    min-width: 280px;
-    max-width: 400px;
-    padding: 20px;
+    min-width: 350px;
+    max-width: 600px;
+    padding: 32px 24px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -235,35 +215,34 @@ footer {
     color: #ddd;
     margin: 0;
     line-height: 1.4;
-    font-family:'Times New Roman', Times, serif 
+    font-family:'Times New Roman', Times, serif;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.center-column a, .common-contact a {
+    color: #fff !important;
+    text-decoration: underline;
 }
 
 /* Contact Section */
 .common-contact {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
-    max-width: 450px;
-    margin: auto;
+  margin-top: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  padding: 32px 24px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 .common-contact h3 {
-    /* font-size: 20px; */
-    margin-bottom: 10px;
-    color: #f39c12;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #f39c12;
 }
-
-
-
-
-
-
-
-
-
-
 
 /* Footer Links */
 .footer-links a {
@@ -311,76 +290,31 @@ footer {
   
 }
 
-
-
-@media (max-width: 768px) and (min-width : 320) {
-    .common-contact {
-        padding: 15px;
-        margin: 10px;
-        max-width: 100%;
-    }
-
-    .common-contact h3 {
-        font-size: 1.5em;
-    }
-
-    .common-contact p {
-        font-size: 1em; /* Adjust paragraph font size for smaller screens */
-    }
-
-  .common-contact p {   
-    
-        font-size: 18px;
-        color: #ddd;
-        margin: 0;
-        line-height: 1.4;
-        font-family:'Times New Roman', Times, serif  /* ✅ Lato font lavla */
-        
-    
+@media (max-width: 1024px) {
+  .center-column {
+    min-width: 250px;
+    max-width: 95vw;
+    padding: 20px 10px;
+  }
+  .center-columns {
+    gap: 20px;
+  }
 }
 
-    .common-contact p strong {
-        font-size: 1.1em; /* Increase the font size for 'strong' text */
-    }
+@media (max-width: 600px) {
+  .center-columns {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin: 0;
+  }
+  .center-column {
+    width: 95vw;
+    min-width: unset;
+    max-width: 98vw;
+    padding: 12px 2vw;
+    box-sizing: border-box;
+  }
 }
-
-
-
-
-
-.common-contact p {   
-    
-        font-size: 10px;
-        color: #ddd;
-        margin: 0;
-        line-height: 1.4;
-        font-family:'Times New Roman', Times, serif  /* ✅ Lato font lavla */
-        
-    
-}
-
-
-@media (min-width: 1024px) {  
-
-
-  .common-contact p {   
-    
-        font-size: 18px;     
-        
-    
-}
-
-} 
-
-
-@media (max-width: 340px) {  
-
-
-  .common-contact p {   
-    
-        font-size: 20px;     
-        
-    
-}
-
-} 
